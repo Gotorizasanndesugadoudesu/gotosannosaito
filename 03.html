@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>身体売買契約書 | DO NOT LEAVE</title>
+    <link rel="stylesheet" href="style3.css">
+    <link rel="icon" href="img/gif/1.gif">
+    
+    <style>
+       
+        body {
+            background-color: #000; 
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            font-family: "Yu Mincho", "YuMincho", serif; 
+            overflow: hidden; 
+        }
+
+        
+        .contract-paper {
+            background-color: #f4f1ea; 
+            width: 100%;
+            max-width: 600px;
+            padding: 60px 40px;
+            box-shadow: 0 0 50px rgba(138, 0, 0, 0.2); 
+            position: relative;
+            transform: rotate(0.5deg);
+        }
+
+        
+        .contract-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            letter-spacing: 0.5em;
+            border-bottom: 2px solid #000;
+            padding-bottom: 20px;
+        }
+
+        
+        .contract-text {
+            font-size: 0.9rem;
+            line-height: 2.2;
+            margin-bottom: 40px;
+        }
+
+        
+        .form-group {
+            margin-bottom: 30px;
+        }
+        
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+
+        
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid #333;
+            font-family: "Yu Mincho", "YuMincho", serif;
+            font-size: 1.2rem;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        input:focus, select:focus {
+            border-bottom: 2px solid #8a0000;
+            background-color: rgba(255, 0, 0, 0.05);
+        }
+
+        /* ボタン */
+        .blood-stamp-btn {
+            display: block;
+            margin: 60px auto 0;
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            background-color: #aa0000; 
+            color: #fff;
+            border: 4px double #fff;
+            font-size: 1.2rem;
+            font-family: "Yu Mincho", serif;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s;
+            box-shadow: 0 0 15px #aa0000;
+            text-shadow: 1px 1px 2px #000;
+        }
+
+        .blood-stamp-btn:hover {
+            transform: scale(1.1);
+            background-color: #cc0000;
+            box-shadow: 0 0 25px #ff0000;
+        }
+
+        .blood-stamp-btn:active {
+            transform: scale(0.95);
+        }
+
+        
+        .stamp-mark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-15deg) scale(3); 
+            border: 8px solid #aa0000;
+            color: #aa0000;
+            font-size: 5rem;
+            font-weight: bold;
+            padding: 20px 40px;
+            opacity: 0; 
+            pointer-events: none; 
+            z-index: 100;
+            white-space: nowrap;
+            text-shadow: 0 0 10px rgba(0,0,0,0.5);
+            
+            transition: 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+            background-color: rgba(255, 255, 255, 0.8); 
+            mix-blend-mode: multiply; 
+        }
+
+        
+        .stamp-mark.show {
+            opacity: 1;
+            transform: translate(-50%, -50%) rotate(-15deg) scale(1);
+        }
+
+        
+        .blackout-curtain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            opacity: 0;
+            pointer-events: none;
+            z-index: 9999;
+            transition: opacity 3s ease; 
+            
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            font-family: "Yu Mincho", serif;
+            font-size: 1.5rem;
+            letter-spacing: 0.2em;
+        }
+
+        
+        .final-message {
+            opacity: 0;
+            transition: opacity 2s ease 2s; 
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="contract-paper">
+        <h1 class="contract-title">身体売買契約書</h1>
+
+        <p class="contract-text">
+            私（以下「甲」）は、人体ショップ（以下「乙」）に対し、
+            人体の売買の契約をすることに同意します。<br>
+            なお、提供後の健康状態、および生命の維持に関して、乙は一切の責任を負わないものとします。
+            今日の夕飯はハンバーグ
+        </p>
+
+        <form action="#" method="post" onsubmit="return stampContract()">
+            
+            <div class="form-group">
+                <label>氏名（甲）</label>
+                <input type="text" placeholder="山田 太郎" required>
+            </div>
+
+            <div class="form-group">
+                <label>血液型</label>
+                <select>
+                    <option>不明</option>
+                    <option>A型</option>
+                    <option>B型</option>
+                    <option>O型</option>
+                    <option>AB型</option>
+                    <option>くわ型</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>提供希望部位</label>
+                <select>
+                    <option>右足</option>
+                    <option>左足</option>
+                    <option>薬指</option>
+                    <option>肝臓</option>
+                    <option>腎臓</option>
+                    <option>心臓</option>
+                    <option>右手</option>
+                    <option>左手</option>
+                    <option>肺</option>
+                    <option>鼻</option>
+                    <option>右目</option>
+                    <option>左目</option> 
+                    <option>鼻毛</option>
+                    <option>手の甲</option>
+                    <option>親指</option>
+                    <option>肋骨</option>
+                    <option>背骨</option>
+                    <option>脇腹</option>
+                    <option>患部</option>
+                    <option>血液</option>
+                    <option>脂肪</option>
+                    <option>頭蓋骨</option>
+                    <option>脳</option>
+                    <option>海馬</option> 
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>特記事項（持病・アレルギー等）</label>
+                <input type="text" placeholder="特になし">
+            </div>
+
+            <div class="form-group">
+                <label style="margin-top: 40px; font-size: 0.9rem; cursor: pointer;">
+                    <input type="checkbox" required style="width: auto; margin-right: 10px;">
+                    上記内容に同意し、返金を求めません。
+                </label>
+            </div>
+
+            <button type="submit" class="blood-stamp-btn">血判<br>(送信)</button>
+
+        </form>
+
+        <div id="final-stamp" class="stamp-mark">契約成立</div>
+    </div>
+
+    <div id="curtain" class="blackout-curtain">
+        <p class="final-message">お届けに参ります。</p>
+    </div>
+
+    <script>
+        function stampContract() {
+            
+            const audio = new Audio('mp3/2.mp3');
+            
+            
+            audio.volume = 1.0; 
+            
+            
+            audio.play().catch(e => console.log("音声ファイルが見つからないか、再生できませんでした"));
+
+            
+            const stamp = document.getElementById('final-stamp');
+            stamp.classList.add('show');
+
+            
+            setTimeout(() => {
+                const curtain = document.getElementById('curtain');
+                curtain.style.opacity = '1'; 
+
+                
+                const msg = curtain.querySelector('.final-message');
+                msg.style.opacity = '1';
+                
+            }, 1000); 
+
+            
+            return false; 
+        }
+    </script>
+
+</body>
+</html>

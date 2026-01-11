@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>従業員 | 人体ショップ</title>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="img/gif/1.gif">
+</head>
+<body>
+
+    <h1 class="page-title">従業員</h1>
+    <h2 class="page-title">社長</h2>
+    
+    <div class="container">
+        <div class="item">
+            <img src="img/png/a1.png" alt="商品画像">
+            <p>山田</p>
+            </div>
+        <div class="item">
+            <img src="img/png/a2.png" alt="商品画像">
+            <p>山田</p>
+            </div>
+        <div class="item">
+            <img src="img/png/a3.png" alt="商品画像">
+            <p>山田</p>
+            </div><div class="item">
+            <img src="img/png/a4.png" alt="商品画像">
+            <p>山田</p>
+            </div><div class="item">
+            <img src="img/png/a5.png" alt="商品画像">
+            <p>山田</p>
+            </div><div class="item">
+            <img src="img/png/a2.png" alt="商品画像">
+            <p>山田</p>
+            </div><div class="item">
+            <img src="img/png/a3.png" alt="商品画像">
+            <p>山田</p>
+            </div><div class="item">
+            <img src="img/png/a4.png" alt="商品画像">
+            <p>山田</p>
+            </div><div class="item">
+            <img src="img/png/a1.png" alt="商品画像">
+            <p>山田</p>
+            </div><div class="item">
+            <img src="img/png/a5.png" alt="商品画像">
+            <p>山田</p>
+            </div><div class="item">
+            <img src="img/png/a3.png" alt="商品画像">
+            <p>山田</p>
+            </div><div class="item">
+            <img src="img/png/a2.png" alt="商品画像">
+            <p>山田</p>
+            </div><div class="item">
+            <img src="img/png/a4.png" alt="商品画像">
+            <p>山田</p>
+            </div><div class="item">
+            <img src="img/png/a5.png" alt="商品画像">
+            <p>山田</p>
+            </div><div class="item">
+            <img src="img/png/a1.png" alt="商品画像">
+            <p>山田</p>
+            </div>
+  <script>
+    
+    const sound = new Audio('mp3/3.mp3'); 
+    const items = document.querySelectorAll('.item');
+
+    
+    const texts = ["痛いっ！！", "触らないで！", "やめろ！！", "あっ…！"];
+
+    items.forEach(item => {
+        item.addEventListener('click', (e) => {
+            
+            sound.currentTime = 0; 
+            sound.play();
+
+           
+            const el = document.createElement('div');
+            el.className = 'scream-pop'; 
+            el.innerText = texts[Math.floor(Math.random() * texts.length)]; 
+
+            
+            el.style.left = e.pageX + 'px';
+            el.style.top = e.pageY + 'px';
+            document.body.appendChild(el);
+
+            
+            setTimeout(() => { el.remove(); }, 1000);
+        });
+    });
+</script>
+
+<style>
+    .scream-pop {
+        position: absolute;
+        color: #aa0000;       
+        font-size: 2.5rem;     
+        font-weight: bold;
+        font-family: "Yu Mincho", serif; 
+        text-shadow: 1px 1px 5px #000;   
+        pointer-events: none;
+        z-index: 9999;
+        animation: screamUp 0.5s ease-out forwards;
+        white-space: nowrap;   
+    }
+
+   
+    @keyframes screamUp {
+        0% { opacity: 1; transform: translate(-50%, -50%) scale(1) rotate(0deg); }
+        100% { opacity: 0; transform: translate(-50%, -100px) scale(2) rotate(10deg); }
+    }
+</style>
+
+</body>
+</html>

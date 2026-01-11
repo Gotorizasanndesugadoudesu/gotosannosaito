@@ -1,0 +1,204 @@
+@charset "utf-8";
+
+html {
+    font-size: 100%;
+}
+body{
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "BIZ UDPGothic", sans-serif;
+    line-height: 1.7;
+    color: #432;
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+}
+img {
+    max-width: 100%;
+}
+/* レイアウト */
+.align-center {
+    text-align: center;
+}
+
+/* 見出し */
+.font-english {
+    font-family: 'Philosopher', sans-serif;
+    font-weight: normal;
+}
+.page-title {
+    font-size: 3rem;
+    text-align: center;
+    margin-top: 2rem;
+    line-height: 1.4;
+}
+.cover {
+    /*background-size: cover;*/
+    /*background-size: 100% 100%;*/
+    background-image: url("4.jpg"), url("2.jpg"), url("3.jpg");
+    background-size: contain, contain, contain;
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    /*background-position: center bottom;*/
+    background-position: center, left, right;
+    height: 800px;
+    background-color: #c86262;
+}
+.concept-area {
+    background-color: #000;    
+    padding: 100px 20px;       
+    text-align: center;        
+}
+
+/* タイトル */
+.bloody-title {
+    color: #ffffff;            
+    font-size: 3rem;
+    font-family: "Yu Mincho", "YuMincho", serif; 
+    margin-bottom: 50px;       
+    letter-spacing: 0.2em;    
+}
+
+/* 本文 */
+.scary-text {
+    color: #b63a3a;               
+    font-size: 1.2rem;
+    line-height: 2.5;          
+    font-family: "Yu Mincho", "YuMincho", serif;
+}
+/*.cover-home {
+    background-image: url("main-bg.jpg");
+}*/
+/*ヘッダー
+----------------------------------------------------*/
+.top-nav-area {
+    display: flex;       
+    height: 800px;       
+    width: 100%;         
+}
+
+
+.nav-box {
+    flex: 1;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    display: flex;
+    justify-content: center; 
+    
+    
+    align-items: flex-end;   
+    
+    
+    padding-bottom: 50px;    
+    
+    text-decoration: none;
+    transition: 0.3s;
+}
+/* 左 */
+.box-left {
+    background-image: url("img/gif/1.gif"); 
+}
+/* 真ん中 */
+.box-center {
+    background-image: url("img/gif/2.gif");
+}
+/* 右：*/
+.box-right {
+    background-image: url("img/gif/3.gif"); 
+}
+
+
+.nav-text {
+    color: #fff;           
+    font-size: 3rem;       
+    font-family: 'Philosopher', sans-serif; 
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
+}
+
+
+.nav-box:hover {
+    opacity: 0.8;
+}
+/*.page-header {
+    padding-top: .5rem;
+}*/
+.logo-wrap {
+    display: flex;           
+    justify-content: center; 
+    align-items: center;     
+    gap: 15px;               
+    text-decoration: none;   
+    color: #432;
+}
+
+.logo {
+    width: 80px;
+    /*margin: 0 auto;*/ 
+    /*display: block;*/
+    text-align: center;
+}
+
+.logo-text {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.main-nav {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    font-size: 1.5rem;
+    list-style: none;
+}
+.main-nav a {
+    color: #432
+}
+.main-nav a:hover {
+    color: #0bd;
+}
+
+.page-header {
+    background-color: #000;  
+    padding: 20px;           
+    text-align: center;     
+}
+
+
+.header-logo {
+    display: flex;          
+    justify-content: center; 
+    align-items: center;    
+    gap: 15px;              
+    text-decoration: none;  
+}
+
+.header-icon {
+    width: 50px;            
+    height: auto;
+}
+.header-text {
+    color: #fff;
+    font-size: 2rem;
+    font-family: 'Philosopher', sans-serif;
+    font-weight: bold;
+}
+.site-footer {
+    background-color: #111;     
+    color: #888;
+    padding: 50px 20px 20px;
+    text-align: center;
+}
+.footer-text {
+    font-family: "Yu Mincho", serif;
+    margin-bottom: 30px;
+    line-height: 2;
+}
+.label {
+    color: #8b1f1f; 
+    border-bottom: 1px solid #8a0000;
+}
+.copyright {
+    font-size: 0.7rem;
+    opacity: 0.3;
+}
